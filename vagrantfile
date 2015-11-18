@@ -74,12 +74,20 @@ Vagrant.configure(2) do |config|
 	 sudo unzip nRF51_SDK_10.0.0_dc26b5e.zip
 
 	## Install GCC - http://gnuarmeclipse.github.io/toolchain/install/
-	sudo apt-get -y install lib32z1 lib32ncurses5 lib32bz2-1.0
-	sudo wget https://launchpad.net/gcc-arm-embedded/4.9/4.9-2015-q3-update/+download/gcc-arm-none-eabi-4_9-2015q3-20150921-linux.tar.bz2
-	cd /usr/local
-	sudo tar xjf /vagrant/sdk/gcc-arm-none-eabi-4_9-2015q3-20150921-linux.tar.bz2
+	#sudo apt-get -y install lib32z1 lib32ncurses5 lib32bz2-1.0
+	#sudo wget https://launchpad.net/gcc-arm-embedded/4.9/4.9-2015-q3-update/+download/gcc-arm-none-eabi-4_9-2015q3-20150921-linux.tar.bz2
+	#cd /usr/local
+	#sudo tar xjf /vagrant/sdk/gcc-arm-none-eabi-4_9-2015q3-20150921-linux.tar.bz2
 	
+	# Install GCC
+    sudo apt-get remove binutils-arm-none-eabi gcc-arm-none-eabi
+	sudo add-apt-repository ppa:terry.guo/gcc-arm-embedded
+	sudo apt-get update
+	sudo apt-get install gcc-arm-none-eabi=4.9.3.2015q3-1trusty1	
 	
+	# Change NRF config file 
+	cp /vagrant/Makefile.posix /vagrant/sdk/components/toolchain/gcc/
+
 	 
    SHELL
 end
