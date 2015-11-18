@@ -1,7 +1,7 @@
-# Vagrant Basic Ubuntu Box Template
+# Vagrant NRF51 SDK ToolChain
 
 ## Introduction
-Vagrant is a tool for building virtual workspaces. Its main benifits is that work enviroments can be setup once and destributed between users. Perfect for sharing complex Toolchains. This repository provides the `vagrantfile` that contains all the enviroment settings to create the virtual linux box that can compile [mBed GCC projects](https://developer.mbed.org/handbook/Exporting-to-GCC-ARM-Embedded).
+Vagrant is a tool for building virtual workspaces. Its main benifits is that work enviroments can be setup once and destributed between users. Perfect for sharing complex Toolchains. This repository provides the `vagrantfile` that contains all the enviroment settings to create the virtual linux box that can compile the examples from the NRF51 SDK.
 
 ## Requirements
 * [Vagrant](https://www.vagrantup.com/downloads.html)
@@ -20,5 +20,6 @@ On the Linux box folder `/vagrant` is the same as the host folder where the `vag
 
 ## Usage
 * Download this repository to a local folder.
+* Run 'vagarnt up' in the repository folder.
 * SSH to the Vagrant box (SSH details above)(I use Putty for windows and SSH for Linux)
 * `cd /vagrant` (Shared folder with the host)
