@@ -80,10 +80,14 @@ Vagrant.configure(2) do |config|
 	#sudo tar xjf /vagrant/sdk/gcc-arm-none-eabi-4_9-2015q3-20150921-linux.tar.bz2
 	
 	# Install GCC
-    sudo apt-get remove binutils-arm-none-eabi gcc-arm-none-eabi
+    	sudo apt-get remove binutils-arm-none-eabi gcc-arm-none-eabi
 	sudo add-apt-repository ppa:terry.guo/gcc-arm-embedded
 	sudo apt-get update
 	sudo apt-get install -y gcc-arm-none-eabi=4.9.3.2015q3-1trusty1	
+	
+	# Display Settings
+	sudo apt-get -y install xfce4
+	
 	
 	# Change NRF config file 
 	cp /vagrant/Makefile.posix /vagrant/sdk/components/toolchain/gcc/
